@@ -10,6 +10,9 @@ describe("The test environment", function() {
   });
 });
 
-describe("Your specs...", function() {
-  // it ...
+describe("Add category", function() {
+  it("Will add a new category when the category is empty and the count is one",function(){
+    var game = new Game();
+    console.log("did it!");
+  });
 });

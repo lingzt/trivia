@@ -18,26 +18,33 @@ exports.Game = function() {
     return !(purses[currentPlayer] == 6)
   };
 
+  var categories = {
+    pop: 'Pop',
+    sports: 'Sports',
+    science: 'Science',
+    rock: 'Rock'
+  };
+
   var currentCategory = function(){
     if(places[currentPlayer] == 0)
-      return 'Pop';
+      return categories.pop;
     if(places[currentPlayer] == 4)
-      return 'Pop';
+      return categories.pop;
     if(places[currentPlayer] == 8)
-      return 'Pop';
+      return categories.pop;
     if(places[currentPlayer] == 1)
-      return 'Science';
+      return categories.science;
     if(places[currentPlayer] == 5)
-      return 'Science';
+      return categories.science;
     if(places[currentPlayer] == 9)
-      return 'Science';
+      return categories.science;
     if(places[currentPlayer] == 2)
-      return 'Sports';
+      return categories.sports;
     if(places[currentPlayer] == 6)
-      return 'Sports';
+      return categories.sports;;
     if(places[currentPlayer] == 10)
-      return 'Sports';
-    return 'Rock';
+      return categories.sports;;
+    return categories.rock;
   };
 
   this.createRockQuestion = function(index){
@@ -73,13 +80,13 @@ exports.Game = function() {
 
 
   var askQuestion = function(){
-    if(currentCategory() == 'Pop')
+    if(currentCategory() == categories.pop)
       console.log(popQuestions.shift());
-    if(currentCategory() == 'Science')
+    if(currentCategory() == categories.science)
       console.log(scienceQuestions.shift());
-    if(currentCategory() == 'Sports')
+    if(currentCategory() == categories.sports)
       console.log(sportsQuestions.shift());
-    if(currentCategory() == 'Rock')
+    if(currentCategory() == categories.rock)
       console.log(rockQuestions.shift());
   };
 
